@@ -21,13 +21,11 @@ function seedComponentsIfNeeded(params: {
 }) {
   const { state, setBuilderState } = params;
 
-  // Only seed once (and only when components are empty)
   if (state.components.items.length > 0) return;
 
   setBuilderState((current) => ({
     ...current,
     components: {
-      // DEFAULT_COMPONENT_LIBRARY is an array of component definitions.
       items: DEFAULT_COMPONENT_LIBRARY,
       status: "success",
       error: null,
@@ -36,13 +34,11 @@ function seedComponentsIfNeeded(params: {
 }
 
 
-
 function WorkspaceContent() {
   const { state, selectComponent, setBuilderState } = useBuilder();
 
   const showDesignColumns = state.ui.activeWorkspace === "design";
 
-  // Stage 7: seed components + initial selection on mount (not during render).
   useEffect(() => {
     if (!showDesignColumns) return;
 
@@ -63,10 +59,8 @@ function WorkspaceContent() {
   }, [showDesignColumns]);
 
   return (
-
-    <div className="min-h-0 flex-1 w-full">
+    <div className="flex min-h-0 flex-1 w-full overflow-hidden">
       {showDesignColumns ? (
-        // DESIGN: Chat | BuilderRail | Canvas | Inspector
         <div className="grid h-full min-h-0 w-full grid-cols-[420px_280px_minmax(400px,1fr)_300px] xl:grid-cols-[420px_280px_minmax(400px,1fr)_300px]">
           {/* Chat */}
           <div className="min-h-0 overflow-hidden border-r border-gray-200">
@@ -107,7 +101,6 @@ function WorkspaceContent() {
           </div>
         </div>
       ) : (
-        // NON-DESIGN: Chat | Workspace (no reserved PageManager/Inspector columns)
         <div className="grid h-full min-h-0 w-full grid-cols-[420px_1fr] xl:grid-cols-[420px_1fr]">
           {/* Chat */}
           <div className="min-h-0 overflow-hidden border-r border-gray-200">
@@ -140,7 +133,6 @@ function BuilderWorkspace() {
 }
 
 
-
 export function BuilderPage() {
   return (
     <ToastProvider>
@@ -150,4 +142,3 @@ export function BuilderPage() {
     </ToastProvider>
   );
 }
-
