@@ -1,0 +1,44 @@
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of C:\Users\91969\Documents\Projects\dashboard\package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * C:\Users\91969\Documents\Projects\dashboard\oneatlas-dashboard\package-lock.json
+
+⨯ Error: Could not find the module "[project]/node_modules/next/dist/client/components/builtin/global-error.js#default" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '1493804065'
+}
+⨯ Error: Could not find the module "[project]/node_modules/next/dist/client/components/builtin/global-error.js#default" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2539727951'
+}
+[0m[7m Server [0m Error: Could not find the module "[project]/node_modules/next/dist/client/components/builtin/global-error.js#default" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>:1:18) {
+  environmentName: 'Server',
+  digest: '2539727951'
+}
+⨯ Error: Could not find the module "[project]/node_modules/next/dist/client/components/builtin/global-error.js#default" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>:1:18) {
+  environmentName: 'Server',
+  digest: '2539727951'
+}
+⨯ Error: Could not find the module "[project]/node_modules/next/dist/client/components/builtin/global-error.js#default" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>:1:18) {
+  environmentName: 'Server',
+  digest: '2539727951',
+  page: '/'
+}
+⨯ Error: Failed to load external module @swc/helpers-a0de6bd0cb8eca46/_/_interop_require_default: Error: Cannot find module '@swc/helpers-a0de6bd0cb8eca46/_/_interop_require_default'
+Require stack:
+- C:\Users\91969\Documents\Projects\dashboard\oneatlas-dashboard\.next\dev\server\chunks\ssr\[root-of-the-server]__08e_lfq._.js
+- C:\Users\91969\Documents\Projects\dashboard\oneatlas-dashboard\.next\dev\server\chunks\ssr\[turbopack]_runtime.js
+- C:\Users\91969\Documents\Projects\dashboard\oneatlas-dashboard\.next\dev\server\app\page.js
+- C:\Users\91969\Documents\Projects\dashboard\oneatlas-dashboard\node_modules\next\dist\server\require.js
+- C:\Users\91969\Documents\Projects\dashboard\oneatlas-dashboard\node_modules\next\dist\server\load-components.js
+- C:\Users\91969\Documents\Projects\dashboard\oneatlas-dashboard\node_modules\next\dist\build\utils.js
+- C:\Users\91969\Documents\Projects\dashboard\oneatlas-dashboard\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- C:\Users\91969\Documents\Projects\dashboard\oneatlas-dashboard\node_modules\next\dist\server\lib\router-server.js
+- C:\Users\91969\Documents\Projects\dashboard\oneatlas-dashboard\node_modules\next\dist\server\lib\start-server.js
+    at module evaluation (C:\Users\91969\Documents\Projects\dashboard\oneatlas-dashboard\.next\dev\server\chunks\ssr\[root-of-the-server]__08e_lfq._.js:28:35)
+    at Object.<anonymous> (C:\Users\91969\Documents\Projects\dashboard\oneatlas-dashboard\.next\dev\server\pages\_document.js:3:3)
