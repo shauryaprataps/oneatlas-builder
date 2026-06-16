@@ -47,13 +47,21 @@ export default function Sidebar({
             return (
               <button
                 key={item.id}
-                onClick={() => setActive(item.id)}
+                onClick={() => {
+                  if (item.id === "builder") {
+                    window.location.assign("/builder");
+                    return;
+                  }
+
+                  setActive(item.id);
+                }}
                 className={`w-full flex items-center gap-3 px-4 py-3 rounded-2xl transition-all duration-200 ${
                   active === item.id
                     ? "bg-white text-[#111111] shadow-sm"
                     : "text-[#6B7280] hover:bg-white/60"
                 }`}
               >
+
                 <Icon size={18} />
                 <span className="text-[15px] font-medium">{item.label}</span>
                 {active === item.id && (

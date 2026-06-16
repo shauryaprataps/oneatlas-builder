@@ -1,13 +1,16 @@
 "use client";
 
-import { Boxes } from "lucide-react";
+import { ArrowLeft, Boxes } from "lucide-react";
+import Link from "next/link";
 import { useBuilder } from "../store/BuilderContext";
 import { PreviewButton } from "./PreviewButton";
 import { PublishButton } from "./PublishButton";
 
+
 export function BuilderToolbar() {
   const { state, updateBuilderState } = useBuilder();
   const projectName = state.project.name;
+
 
   function updateProjectName(name: string) {
     updateBuilderState({
@@ -21,6 +24,16 @@ export function BuilderToolbar() {
   return (
     <header className="sticky top-0 z-30 grid h-16 shrink-0 grid-cols-[1fr_auto] items-center border-b border-gray-200 bg-white px-4 sm:grid-cols-3 sm:px-6">
       <div className="flex items-center gap-2.5">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 rounded-md px-2 py-1 text-xs font-medium text-gray-600 transition hover:bg-gray-100 hover:text-gray-900"
+          aria-label="Back to dashboard"
+        >
+          <ArrowLeft className="h-3.5 w-3.5" />
+          <span className="hidden sm:inline">← Dashboard</span>
+          <span className="sm:hidden">←</span>
+        </Link>
+
         <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-orange-500 text-white shadow-sm shadow-orange-200">
           <Boxes className="h-5 w-5" strokeWidth={2.25} />
         </span>
@@ -29,6 +42,7 @@ export function BuilderToolbar() {
           <p className="text-[11px] font-medium text-gray-400">Builder</p>
         </div>
       </div>
+
 
       <div className="hidden min-w-0 max-w-64 justify-self-center text-center sm:block">
         <input

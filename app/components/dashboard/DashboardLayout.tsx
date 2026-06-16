@@ -8,7 +8,7 @@ import AIPromptSection from "./AIPromptSection";
 import ContinueBuilding from "./ContinueBuilding";
 import RecentProjects from "./RecentProjects";
 import Templates from "./Templates";
-import {Builder} from "../builder/Builder";
+
 
 export default function DashboardLayout() {
   const [activePage, setActivePage] = useState("dashboard");
@@ -48,9 +48,7 @@ export default function DashboardLayout() {
             </div>
           )}
 
-          {activePage === "builder" && (
-            <Builder />
-          )}
+
 
           {activePage === "profile" && (
             <div className="bg-white rounded-3xl border border-[#E5E7EB] p-8">
@@ -59,6 +57,7 @@ export default function DashboardLayout() {
               </h1>
             </div>
           )}
+
         </div>
       </main>
     </div>

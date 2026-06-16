@@ -1,5 +1,6 @@
-import { BuilderPage } from "./components/builder/BuilderPage";
+import DashboardLayout from "./components/dashboard/DashboardLayout";
 
 export default function Home() {
-  return <BuilderPage />;
+  return <DashboardLayout />;
 }
+

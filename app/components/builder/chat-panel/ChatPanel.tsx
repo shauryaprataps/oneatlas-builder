@@ -23,6 +23,15 @@ export function ChatPanel() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const el = messagesEndRef.current;
+
+    if (el) {
+      console.log("MESSAGE VIEWPORT", {
+        clientHeight: el.clientHeight,
+        scrollHeight: el.scrollHeight,
+      });
+    }
+
     messagesEndRef.current?.scrollIntoView({
       behavior: "smooth",
     });
@@ -248,7 +257,7 @@ export function ChatPanel() {
                 {state.messages.length > 0 ? (
                   <div
                     className="min-h-0 flex-1 overflow-y-auto space-y-4 pr-2"
-                    ref={messagesEndRef as unknown as React.RefObject<HTMLDivElement>}
+                    ref={messagesEndRef}
                   >
                     {state.messages.map((message) => (
                       <MessageBubble
